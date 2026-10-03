@@ -26,7 +26,7 @@ class twittpay extends PaymentGatewayModule
         return [
             'base_url' => [
                 'name'        => 'Endpoint URL',
-                'description' => 'Your own gateway address, for example https://checkout.twittpay.com',
+                'description' => 'Optional. Leave empty to use the default checkout address (https://checkout.twittpay.com)',
                 'type'        => 'text',
                 'value'       => $this->config['settings']['base_url'] ?? '',
             ],
