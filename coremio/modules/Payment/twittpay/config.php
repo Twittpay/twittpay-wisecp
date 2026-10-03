@@ -9,7 +9,6 @@ return [
     'settings' => [
         // Both are filled in from the admin panel: Settings -> Payment Gateways.
         'api_key'              => '',
-        'base_url'             => '',
 
         // Used only when the invoice is not already in BDT. 1 USD = this many BDT.
         'currency_rate'        => '120',

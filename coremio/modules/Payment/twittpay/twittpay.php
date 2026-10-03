@@ -24,12 +24,6 @@ class twittpay extends PaymentGatewayModule
     public function config_fields()
     {
         return [
-            'base_url' => [
-                'name'        => 'Endpoint URL',
-                'description' => 'Optional. Leave empty to use the default checkout address (https://checkout.twittpay.com)',
-                'type'        => 'text',
-                'value'       => $this->config['settings']['base_url'] ?? '',
-            ],
             'api_key' => [
                 'name'        => 'Brand Key',
                 'description' => 'From your gateway dashboard, under Brands.',
@@ -248,20 +242,7 @@ class twittpay extends PaymentGatewayModule
      */
     private function baseUrl()
     {
-        $raw    = rtrim(trim((string) ($this->config['settings']['base_url'] ?? '')), '/');
-        $scheme = parse_url($raw, PHP_URL_SCHEME);
-        $host   = parse_url($raw, PHP_URL_HOST);
-
-        if (empty($host)) {
-            $host = strtok(ltrim(preg_replace('#^[a-z]+://#i', '', $raw), '/'), '/');
-        }
-
-        if (empty($scheme)) {
-            $scheme = 'https';
-        }
-
-        if (empty($host)) { $host = 'checkout.twittpay.com'; }
-        return 'https://' . $host;
+        return 'https://checkout.twittpay.com';
     }
 
     /** One POST to the API. JSON in, array out. */

@@ -15,9 +15,6 @@
    2. Find "TwittPay" and activate it.
    3. Fill in the three fields:
 
-        Endpoint URL      your own gateway address, e.g.
-                          https://checkout.twittpay.com
-                          (the API host shown on your gateway's developer page)
 
         Brand Key           from your gateway dashboard, under Brands
 
@@ -52,8 +49,6 @@
      and the module sends the amount untouched.
 
  WHAT TO WATCH
-   * The Endpoint URL is your API host. Pasting the whole endpoint or a trailing
-     /api is fine - only the scheme and host are used.
    * If your site answers on both www and non-www, make sure WISECP's own URL
      setting matches the one customers use, or the callback lands on the other
      host.
